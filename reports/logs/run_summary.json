@@ -1,0 +1,28 @@
+{
+  "project": "NSSS Visibility Graph Turning Points",
+  "ticker": "NSSS.JK",
+  "rows": 333,
+  "date_start": "2025-01-02",
+  "date_end": "2026-06-18",
+  "window_size": 60,
+  "graph_mode": "horizontal",
+  "lead_bars": 5,
+  "signals": {
+    "No Signal": 164,
+    "Watchlist": 79,
+    "Potential Reversal": 57,
+    "Strong Reversal": 33
+  },
+  "backtest_summary": {
+    "n_trades": 29,
+    "win_rate_pct": 51.724137931034484,
+    "avg_return_pct": 1.5150782021071658,
+    "median_return_pct": 0.6803921568627416,
+    "total_return_pct": 37.59557000272871,
+    "max_drawdown_pct": -37.61775046320703,
+    "avg_holding_bars": 3.7586206896551726,
+    "profit_factor": 1.4235530715565803
+  },
+  "no_lookahead_rule": "For each date t, visibility graph features are built only from the trailing window ending at t. The model never uses bars after t as features. Future bars are used only to construct evaluation labels.",
+  "output_signals": "data/processed/05_reversal_signals.csv"
+}
