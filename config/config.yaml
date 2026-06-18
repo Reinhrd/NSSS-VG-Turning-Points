@@ -1,0 +1,38 @@
+project:
+  name: "NSSS Visibility Graph Turning Points"
+  ticker: "NSSS.JK"
+  raw_csv: "data/raw/NSSS_stock_history.csv"
+  date_format: "%m/%d/%Y"
+
+pipeline:
+  window_size: 60
+  graph_mode: "horizontal"      # "horizontal" or "natural"
+  zigzag_threshold_pct: 0.12
+  peak_prominence_atr_mult: 1.0
+  lead_bars: 5
+
+scoring:
+  support_distance_threshold: 0.08
+  volume_ratio_threshold: 1.50
+  volume_zscore_threshold: 1.25
+  lower_shadow_threshold: 0.035
+  vg_degree_quantile: 0.80
+  vg_betweenness_quantile: 0.75
+  potential_threshold: 4
+  strong_threshold: 5
+
+backtest:
+  target_profit_pct: 0.12
+  stop_loss_pct: 0.08
+  max_hold_bars: 10
+  fee_bps_round_trip: 30
+
+fundamental_context:
+  # These are project-level assumptions/context scores. Edit them whenever
+  # you update the fundamental thesis.
+  b50_cpo_catalyst: 1
+  revenue_turnaround_2025: 1
+  net_profit_turnaround_2025: 1
+  q1_2026_revenue_growth: 1
+  q1_2026_profit_normalization_penalty: -1
+  audit_or_regulatory_risk_penalty: -1
