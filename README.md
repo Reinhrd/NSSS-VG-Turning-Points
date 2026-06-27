@@ -1,5 +1,7 @@
 # NSSS Visibility Graph Turning Points
 
+- Rei
+
 A Python project for **reversal-zone detection** on `NSSS.JK` using:
 
 1. **OHLCV data**
